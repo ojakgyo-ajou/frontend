@@ -6,7 +6,7 @@ export default function Root() {
 
   return (
     <>
-      <main className="h-screen overflow-y-auto pb-20">
+      <main className="h-screen overflow-y-auto pb-16">
         <Outlet />
       </main>
 
