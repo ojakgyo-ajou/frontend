@@ -1,6 +1,7 @@
 // import { Search } from 'lucide-react';
 import HomeCarousel from '@/components/home-carousel';
 import ItemCarousel from '@/components/item-carousel';
+import RecipeCarousel from '@/components/recipe-carousel';
 
 export default function Home() {
   return (
@@ -17,6 +18,12 @@ export default function Home() {
         <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-1">다음주 장을 봐볼까요?</h1>
         <h2 className="text-muted-foreground mb-4">오늘의 밥상 가격</h2>
         <ItemCarousel />
+      </div>
+
+      <div className="flex flex-col">
+        <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-1">다음주 장을 봐볼까요?</h1>
+        <h2 className="text-muted-foreground mb-4">오늘의 밥상 가격</h2>
+        <RecipeCarousel />
       </div>
     </div>
   );

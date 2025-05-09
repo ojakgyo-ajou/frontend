@@ -1,0 +1,70 @@
+interface CardItem {
+  tags: string[]; // 해시태그 배열 (예: ["#당근", "#간단"])
+  title: string; // 제목 텍스트
+}
+
+type CardData = CardItem[];
+
+const cardList: CardData = [
+  {
+    tags: ['#당근', '#바로', '#간단'],
+    title: '당근으로 해먹는 간단한 자취식단',
+  },
+  {
+    tags: ['#브로콜리', '#건강', '#레시피'],
+    title: '브로콜리와 닭가슴살로 만드는 건강한 한끼',
+  },
+  {
+    tags: ['#퀴노아', '#영양', '#비건'],
+    title: '퀴노아 샐러드로 만드는 영양 만점 비건식',
+  },
+  {
+    tags: ['#두부', '#맛있어', '#간편'],
+    title: '두부 스테이크로 간편하게 즐기는 맛있는 저녁',
+  },
+  {
+    tags: ['#감자', '#속풀림', '#혼밥'],
+    title: '감자탕으로 속 푸는 혼자만의 따뜻한 저녁',
+  },
+  {
+    tags: ['#계란', '#빠르게', '#아침식사'],
+    title: '계란말이로 빠르게 해결하는 아침 한끼',
+  },
+  {
+    tags: ['#김치', '#한그릇', '#집밥'],
+    title: '김치볶음밥으로 완성하는 든든한 한그릇',
+  },
+  {
+    tags: ['#연어', '#프로틴', '#다이어트'],
+    title: '연어 스테이크로 단백질 가득 다이어트 식단',
+  },
+  {
+    tags: ['#참치', '#샌드위치', '#간편'],
+    title: '참치마요 샌드위치로 빠르게 해결하는 점심',
+  },
+  {
+    tags: ['#고구마', '#간식', '#저탄수'],
+    title: '에어프라이어 고구마로 건강한 간식 타임',
+  },
+];
+
+export default function RecipeCarousel() {
+  return (
+    <div className="carousel w-full space-x-4">
+      {cardList.map((card, cardIndex) => (
+        <div key={cardIndex} className="carousel-item w-36 h-56 px-5 py-6 bg-stone-50 rounded-xl">
+          <div className="flex flex-col justify-end items-end gap-1.5">
+            <div className="inline-flex justify-end items-center gap-1.5">
+              {card.tags.map((tag, tagIndex) => (
+                <div key={tagIndex} className="opacity-30 text-center justify-start text-black text-xs">
+                  {tag}
+                </div>
+              ))}
+            </div>
+            <div className="self-stretch text-right justify-start text-black text-base font-bold">{card.title}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
