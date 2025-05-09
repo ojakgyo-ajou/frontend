@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -32,15 +35,10 @@ export default function Register() {
         }),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
-        console.log('Registration successful:', data);
-        // 회원가입 성공 처리 (예: 로그인 페이지로 리디렉션)
-        window.location.href = '/login';
+        navigate('/login');
       } else {
-        console.error('Registration failed:', data);
-        setErrorMessage(data.message || '회원가입에 실패했습니다.');
+        setErrorMessage('회원가입에 실패했습니다.');
       }
     } catch (error) {
       console.error('Registration request error:', error);
