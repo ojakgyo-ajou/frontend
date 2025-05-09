@@ -125,11 +125,8 @@ export default function Product() {
 
             <DrawerContent>
               <DrawerHeader>
-                <DrawerTitle>어디에서 구매할까요?</DrawerTitle>
+                <DrawerTitle>구입 완료!</DrawerTitle>
               </DrawerHeader>
-              <div className="w-full p-2 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-                <ShopList />
-              </div>
             </DrawerContent>
           </Drawer>
         </div>
