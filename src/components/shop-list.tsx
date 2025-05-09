@@ -1,5 +1,6 @@
 import { IconStarFilled } from '@tabler/icons-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router';
 
 interface shopData {
   name: string;
@@ -44,20 +45,22 @@ export default function ShopList() {
   return (
     <>
       {shopList.map((shop, index) => (
-        <Button key={index} variant="ghost" size="xl" className="w-full p-0 cursor-pointer">
-          <div className="w-full p-3 rounded-lg inline-flex justify-between items-center">
-            <div className="text-center justify-start text-black text-base font-medium font-['Noto_Sans_CJK_KR']">
-              {shop.name}
-            </div>
-            <div className="flex justify-end items-center gap-6">
-              <div className="flex flex-row justify-center items-center gap-1 text-black text-base font-medium">
-                <IconStarFilled className="size-4 fill-amber-300" />
-                <span>{shop.rating}</span>
+        <Link to="/product/1" key={index} className="w-full">
+          <Button key={index} variant="ghost" size="xl" className="w-full p-0 cursor-pointer">
+            <div className="w-full p-3 rounded-lg inline-flex justify-between items-center">
+              <div className="text-center justify-start text-black text-base font-medium font-['Noto_Sans_CJK_KR']">
+                {shop.name}
               </div>
-              <div className="text-base font-medium">{shop.price.toLocaleString()}</div>
+              <div className="flex justify-end items-center gap-6">
+                <div className="flex flex-row justify-center items-center gap-1 text-black text-base font-medium">
+                  <IconStarFilled className="size-4 fill-amber-300" />
+                  <span>{shop.rating}</span>
+                </div>
+                <div className="text-base font-medium">{shop.price.toLocaleString()}</div>
+              </div>
             </div>
-          </div>
-        </Button>
+          </Button>
+        </Link>
       ))}
     </>
   );

@@ -1,4 +1,5 @@
-import { IconStar } from '@tabler/icons-react';
+import { useNavigate } from 'react-router';
+import { IconStar, IconArrowLeft, IconShoppingCart } from '@tabler/icons-react';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import ShopList from '@/components/shop-list';
 import ReviewCard from '@/components/review-card';
@@ -67,6 +68,8 @@ const reviews = [
 ];
 
 export default function Product() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex flex-col gap-8 px-6 py-8">
@@ -88,7 +91,7 @@ export default function Product() {
 
         <div className="w-full p-6 rounded-2xl outline outline-gray-200 inline-flex justify-between items-center">
           <div className="flex justify-start items-center gap-3">
-            <div className="justify-start text-green-700 text-xl font-bold">양배추</div>
+            <div className="justify-start text-green-700 text-xl font-bold">감자</div>
           </div>
           <div className="inline-flex items-center gap-1">
             <IconStar className="size-5 text-green-700" />
@@ -104,17 +107,33 @@ export default function Product() {
         ))}
       </div>
 
-      <Drawer>
-        <DrawerTrigger>구입하기</DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>어디에서 구매할까요?</DrawerTitle>
-          </DrawerHeader>
-          <div className="w-full p-2 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-            <ShopList />
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50">
+        <div className="inline-flex items-center gap-4">
+          <div
+            className="w-20 h-14 p-4 bg-neutral-50 rounded-xl flex justify-center items-center gap-3 cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <IconArrowLeft className="size-6 text-green-700" />
           </div>
-        </DrawerContent>
-      </Drawer>
+          <Drawer>
+            <DrawerTrigger>
+              <div className="flex flex-row justify-center items-center w-[70dvw] max-w-md p-4 bg-green-700 rounded-xl gap-3 cursor-pointer">
+                <div className=" text-neutral-50 text-base font-medium">구입하기</div>
+                <IconShoppingCart className="size-6 text-neutral-50" />
+              </div>
+            </DrawerTrigger>
+
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>어디에서 구매할까요?</DrawerTitle>
+              </DrawerHeader>
+              <div className="w-full p-2 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+                <ShopList />
+              </div>
+            </DrawerContent>
+          </Drawer>
+        </div>
+      </div>
     </>
   );
 }
