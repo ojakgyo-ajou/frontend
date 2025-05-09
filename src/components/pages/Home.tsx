@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { Search, UserRound } from 'lucide-react';
 import HomeCarousel from '@/components/home-carousel';
 import ItemCarousel from '@/components/item-carousel';
-import RecipeCarousel from '@/components/recipe-carousel';
+import RecipeCarousel from '@/components/recipe-story-carousel';
 
 export default function Home() {
   return (

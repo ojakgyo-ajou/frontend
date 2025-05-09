@@ -48,7 +48,7 @@ const cardList: CardData = [
   },
 ];
 
-export default function RecipeCarousel() {
+export default function RecipeStoryCarousel() {
   return (
     <div className="carousel w-full space-x-4">
       {cardList.map((card, cardIndex) => (
