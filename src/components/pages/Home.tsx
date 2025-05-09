@@ -1,4 +1,5 @@
-import { Search } from 'lucide-react';
+// import { Search } from 'lucide-react';
+import ItemCarousel from '@/components/item-carousel';
 
 export default function Home() {
   return (
@@ -50,11 +51,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center">
-        <label className="input input-lg w-[90%] m-4">
-          <Search />
-          <input type="text" required placeholder="오늘의 작물 검색" pattern="[A-Za-z][A-Za-z0-9\-]*" />
-        </label>
+      <div className="flex flex-col p-4">
+        <h1 className="scroll-m-20 text-2xl font-semibold tracking-tight mb-1">다음주 장을 봐볼까요?</h1>
+        <h2 className="text-muted-foreground mb-4">오늘의 밥상 가격</h2>
+        <ItemCarousel />
       </div>
     </>
   );

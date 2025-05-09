@@ -6,9 +6,11 @@ export default function Root() {
 
   return (
     <>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
 
-      <div className="dock">
+      <nav className="dock">
         <Link to="/" className={location.pathname === '/' ? 'dock-active' : ''}>
           <Home className="size-[1.2em]" />
           <span className="dock-label">홈</span>
@@ -32,7 +34,7 @@ export default function Root() {
           <Settings className="size-[1.2em]" />
           <span className="dock-label">설정</span>
         </Link>
-      </div>
+      </nav>
     </>
   );
 }
