@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { IconSearch, IconUserCircle } from '@tabler/icons-react';
 import ProductCard from '@/components/product-card';
@@ -6,10 +7,10 @@ const products = [
   {
     itemCode: '111',
     kindCode: '01',
-    kindName: '일반계',
-    unit: '20kg',
-    todayPrice: 52000,
-    yesterdayPrice: 53000,
+    kindName: '감자',
+    unit: '10kg',
+    todayPrice: 22000,
+    yesterdayPrice: 23000,
     priceChangeRate: -1.8867924528301887,
     priceDirection: 0,
     latestDate: '2024-10-09',
@@ -39,6 +40,20 @@ const products = [
 ];
 
 export default function ListPage() {
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/api/kamis/dashboard');
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      } else {
+        console.error('Failed to fetch data');
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="flex flex-col gap-8 px-6 py-8">
       <header className="flex flex-row justify-between items-center px-2">

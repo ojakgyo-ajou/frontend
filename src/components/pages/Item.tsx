@@ -1,4 +1,5 @@
-import { Link, useNavigate } from 'react-router'; // Changed from 'react-router'
+import { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router';
 import {
   IconBell,
   IconShoppingCart,
@@ -14,6 +15,7 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from 
 import RecipeCarousel from '@/components/recipe-carousel';
 import ArticleCard from '@/components/article-card';
 import ShopList from '@/components/shop-list';
+import chart from '../../assets/chart.png';
 
 const articles = [
   {
@@ -39,12 +41,27 @@ const articles = [
 export default function Item() {
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const response = await fetch('/api/ai/price-prediction?productName=감자');
+
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       console.log(data);
+  //     } else {
+  //       console.error('Failed to fetch data');
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
+
   return (
     <>
       <div className="flex flex-col gap-8 px-6 py-8">
         <header className="flex flex-col gap-2">
           <div className="flex flex-row justify-between items-center px-2">
-            <h1 className="text-green-700 scroll-m-20 text-2xl font-semibold tracking-tight">양배추</h1>
+            <h1 className="text-green-700 scroll-m-20 text-2xl font-semibold tracking-tight">감자</h1>
             <div className="flex flex-row gap-5">
               <Link to="#">
                 <IconBell className="size-7" />
@@ -56,8 +73,8 @@ export default function Item() {
           </div>
           <div className="flex flex-row justify-between items-center px-2">
             <div className="inline-flex justify-start items-end gap-2">
-              <span className="scroll-m-20 text-2xl font-semibold tracking-tight">19,000원</span>
-              <span className="scroll-m-20 text-muted-foreground text-base font-semibold tracking-tight">/ 통</span>
+              <span className="scroll-m-20 text-2xl font-semibold tracking-tight">22,000원</span>
+              <span className="scroll-m-20 text-muted-foreground text-base font-semibold tracking-tight">/ 10kg</span>
             </div>
             <div className="inline-flex justify-start items-center gap-2">
               <div className="flex justify-start items-center gap-2">
@@ -68,7 +85,7 @@ export default function Item() {
           </div>
         </header>
 
-        <div className="bg-gray-200 rounded-2xl w-full h-72"></div>
+        <img src={chart} alt="차트" />
 
         <div className="flex flex-col justify-start items-start gap-3">
           <div className="inline-flex justify-start items-center gap-2">
@@ -113,7 +130,7 @@ export default function Item() {
             <div className="self-stretch inline-flex justify-start items-center gap-3">
               <div className="flex-1 p-3 rounded-2xl inline-flex flex-col justify-center items-center gap-2">
                 <div className="justify-start text-black text-base font-bold">온라인 평균</div>
-                <div className="self-stretch text-center justify-start text-black text-base">21,000원</div>
+                <div className="self-stretch text-center justify-start text-black text-base">22,000원</div>
               </div>
               <div className="flex-1 p-3 rounded-2xl inline-flex flex-col justify-center items-center gap-2">
                 <div className="justify-start text-black text-base font-bold">재래시장 평균</div>
@@ -121,7 +138,7 @@ export default function Item() {
               </div>
               <div className="flex-1 p-3 rounded-2xl inline-flex flex-col justify-center items-center gap-2">
                 <div className="justify-start text-black text-base font-bold">마트 평균</div>
-                <div className="self-stretch text-center justify-start text-black text-base">21,000원</div>
+                <div className="self-stretch text-center justify-start text-black text-base">23,000원</div>
               </div>
             </div>
             <div className="self-stretch bg-stone-300/30 rounded-2xl inline-flex justify-start items-center gap-3">
