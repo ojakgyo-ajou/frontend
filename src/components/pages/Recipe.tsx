@@ -4,21 +4,10 @@ export default function Recipe() {
     <div className="flex flex-col gap-8 px-6 py-8">
       <section className="bg-gray-50 rounded-xl p-4 mb-6 flex items-center">
         <div className="mr-3">
-          <span className="text-orange-500">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-            </svg>
-          </span>
+          <img src="/api/images/당근" alt="당근" className="size-16 object-contain rounded-full" />
         </div>
         <div>
-          <h2 className="text-lg font-bold">참치 구매한 당근</h2>
+          <h2 className="text-lg font-bold">지난주 구매한 당근</h2>
           <p className="text-gray-500 text-sm">맛있게 잘 드셨나요?</p>
         </div>
         <div className="ml-auto">
@@ -43,22 +32,22 @@ export default function Recipe() {
 
         <div className="grid grid-cols-4 gap-2">
           <div className="bg-green-50 rounded-xl p-3 flex flex-col items-center">
-            <img src="https://via.placeholder.com/50" alt="참치" className="mb-2 rounded-full" />
+            <img src="/api/images/참치" alt="참치" className="mb-2 size-16 object-contain rounded-full" />
             <span className="font-medium">참치</span>
             <span className="text-red-500 font-medium">1캔</span>
           </div>
           <div className="bg-green-50 rounded-xl p-3 flex flex-col items-center">
-            <img src="https://via.placeholder.com/50" alt="토마토" className="mb-2 rounded-full" />
+            <img src="/api/images/토마토" alt="토마토" className="mb-2 size-16 object-contain rounded-full" />
             <span className="font-medium">토마토</span>
             <span className="text-red-500 font-medium">1개</span>
           </div>
           <div className="bg-green-50 rounded-xl p-3 flex flex-col items-center">
-            <img src="https://via.placeholder.com/50" alt="식빵" className="mb-2 rounded-full" />
+            <img src="/api/images/식빵" alt="식빵" className="mb-2 size-16 object-contain rounded-full" />
             <span className="font-medium">식빵</span>
             <span className="text-red-500 font-medium">2장</span>
           </div>
           <div className="bg-green-50 rounded-xl p-3 flex flex-col items-center">
-            <img src="https://via.placeholder.com/50" alt="마요네즈" className="mb-2 rounded-full" />
+            <img src="/api/images/마요네즈" alt="마요네즈" className="mb-2 size-16 object-contain rounded-full" />
             <span className="font-medium">마요네즈</span>
             <span className="text-red-500 font-medium">적당량</span>
           </div>
@@ -117,21 +106,13 @@ export default function Recipe() {
 
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-gray-100 p-4 rounded-xl">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="추천 레시피 1"
-              className="w-full h-32 object-cover rounded-lg mb-2"
-            />
+            <img src="/api/images/샐러드" alt="추천 레시피 1" className="w-full h-32 object-contain rounded-lg mb-2" />
             <div className="text-xs text-gray-500 mb-1">#참치 #샐러드 #간단</div>
             <h3 className="font-bold">참치로 만드는 샐러드 한 그릇</h3>
           </div>
 
           <div className="bg-gray-100 p-4 rounded-xl">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="추천 레시피 2"
-              className="w-full h-32 object-cover rounded-lg mb-2"
-            />
+            <img src="/api/images/스프" alt="추천 레시피 2" className="w-full h-32 object-contain rounded-lg mb-2" />
             <div className="text-xs text-gray-500 mb-1">#토마토 #스프 #레시피</div>
             <h3 className="font-bold">토마토 수프 만들기</h3>
           </div>
