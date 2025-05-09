@@ -3,6 +3,7 @@ import Root from '@/components/pages/Root';
 import Home from '@/components/pages/Home';
 import Login from '@/components/pages/Login';
 import Item from '@/components/pages/Item';
+import Product from '@/components/pages/Product';
 import Setting from '@/components/pages/Setting';
 import NotFound from '@/components/pages/NotFound';
 
@@ -13,6 +14,7 @@ export default function AppRoutes() {
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="item/:item" element={<Item />} />
+        <Route path="product/:item" element={<Product />} />
         <Route path="setting" element={<Setting />} />
 
         <Route path="*" element={<NotFound />} />
