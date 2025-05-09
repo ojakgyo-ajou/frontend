@@ -42,7 +42,7 @@ const MenuInfo = {
         />
       </>
     ),
-    url: '/total',
+    url: '/list',
   },
   [MenuStatus.SCHEDULE]: {
     title: '식단추천',
@@ -101,7 +101,7 @@ const MenuBar = ({}: MenuBarProps) => {
       case '':
         setPage(MenuStatus.HOME);
         break;
-      case 'total':
+      case 'list':
         setPage(MenuStatus.TOTAL_PRICE);
         break;
       case 'schedule':
