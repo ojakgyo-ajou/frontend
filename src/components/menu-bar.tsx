@@ -55,7 +55,7 @@ const MenuInfo = {
         />
       </>
     ),
-    url: '/schedule',
+    url: '/recipe',
   },
   [MenuStatus.CART]: {
     title: '장바구니',
@@ -80,7 +80,7 @@ const MenuBar = ({}: MenuBarProps) => {
 
   const parent_element = useRef<HTMLDivElement>(null);
 
-  const [page, setPage] = useState<MenuStatus>(MenuStatus.HOME);
+  const [page, setPage] = useState<MenuStatus | null>(MenuStatus.HOME);
   const [calced_loc, setCalcedLoc] = useState<CalcedLoc>({ width: 0, left: 0 });
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const MenuBar = ({}: MenuBarProps) => {
       case 'list':
         setPage(MenuStatus.TOTAL_PRICE);
         break;
-      case 'schedule':
+      case 'recipe':
         setPage(MenuStatus.SCHEDULE);
         break;
       case 'cart':

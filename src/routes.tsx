@@ -6,6 +6,7 @@ import Register from '@/components/pages/Register';
 import List from '@/components/pages/List';
 import Item from '@/components/pages/Item';
 import Product from '@/components/pages/Product';
+import Recipe from '@/components/pages/Recipe';
 import Setting from '@/components/pages/Setting';
 import NotFound from '@/components/pages/NotFound';
 
@@ -19,6 +20,7 @@ export default function AppRoutes() {
         <Route path="list" element={<List />} />
         <Route path="item/:item" element={<Item />} />
         <Route path="product/:item" element={<Product />} />
+        <Route path="recipe" element={<Recipe />} />
         <Route path="setting" element={<Setting />} />
 
         <Route path="*" element={<NotFound />} />
