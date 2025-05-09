@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router'; // Changed from 'react-router'
 import {
   IconBell,
   IconShoppingCart,
@@ -7,6 +7,8 @@ import {
   IconNews,
   IconRobotFace,
   IconScale,
+  IconArrowRight,
+  IconArrowLeft,
 } from '@tabler/icons-react';
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from '@/components/ui/drawer';
 import RecipeCarousel from '@/components/recipe-carousel';
@@ -35,6 +37,8 @@ const articles = [
 ];
 
 export default function Item() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="flex flex-col gap-8 px-6 py-8">
@@ -149,17 +153,34 @@ export default function Item() {
           </div>
         </div>
       </div>
-      <Drawer>
-        <DrawerTrigger>구입하기</DrawerTrigger>
-        <DrawerContent>
-          <DrawerHeader>
-            <DrawerTitle>어디에서 구매할까요?</DrawerTitle>
-          </DrawerHeader>
-          <div className="w-full p-2 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
-            <ShopList />
+
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50">
+        <div className="inline-flex items-center gap-4">
+          <div
+            className="w-20 h-14 p-4 bg-neutral-50 rounded-xl flex justify-center items-center gap-3 cursor-pointer"
+            onClick={() => navigate(-1)}
+          >
+            <IconArrowLeft className="size-6 text-green-700" />
           </div>
-        </DrawerContent>
-      </Drawer>
+          <Drawer>
+            <DrawerTrigger>
+              <div className="flex flex-row justify-center items-center w-[70dvw] p-4 bg-green-700 rounded-xl gap-3 cursor-pointer">
+                <div className=" text-neutral-50 text-base font-medium">구입하기</div>
+                <IconArrowRight className="size-6 text-neutral-50" />
+              </div>
+            </DrawerTrigger>
+
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>어디에서 구매할까요?</DrawerTitle>
+              </DrawerHeader>
+              <div className="w-full p-2 inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden">
+                <ShopList />
+              </div>
+            </DrawerContent>
+          </Drawer>
+        </div>
+      </div>
     </>
   );
 }
