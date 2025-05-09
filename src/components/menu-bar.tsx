@@ -106,7 +106,8 @@ const MenuBar = ({}: MenuBarProps) => {
   }, [location]);
 
   const onMenuItemClick = (key: MenuStatus) => {
-    navigate(MenuInfo[key]?.url || "/");
+    // navigate(MenuInfo[key]?.url || "/");
+    setPage(key)
   }
 
   return <nav 
