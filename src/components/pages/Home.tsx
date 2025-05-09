@@ -13,7 +13,7 @@ export default function Home() {
           <Link to="/search">
             <IconSearch className="size-7" />
           </Link>
-          <Link to="/mypage">
+          <Link to="/login">
             <IconUserCircle className="size-8" />
           </Link>
         </div>
