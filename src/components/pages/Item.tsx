@@ -164,7 +164,7 @@ export default function Item() {
           </div>
           <Drawer>
             <DrawerTrigger>
-              <div className="flex flex-row justify-center items-center w-[70dvw] p-4 bg-green-700 rounded-xl gap-3 cursor-pointer">
+              <div className="flex flex-row justify-center items-center w-[70dvw] max-w-md p-4 bg-green-700 rounded-xl gap-3 cursor-pointer">
                 <div className=" text-neutral-50 text-base font-medium">구입하기</div>
                 <IconArrowRight className="size-6 text-neutral-50" />
               </div>
