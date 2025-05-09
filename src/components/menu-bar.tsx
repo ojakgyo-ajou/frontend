@@ -109,7 +109,7 @@ const MenuBar = ({}: MenuBarProps) => {
     navigate(MenuInfo[key]?.url || "/");
   }
 
-  return <div 
+  return <nav 
     className="w-fit h-fit p-2 bg-stone-50 rounded-2xl inline-flex justify-between items-center relative z-0 select-none" 
     ref={parent_element}
   >
@@ -138,6 +138,6 @@ const MenuBar = ({}: MenuBarProps) => {
         </section>
       )
     }
-  </div>
+  </nav>
 };
 export default MenuBar
