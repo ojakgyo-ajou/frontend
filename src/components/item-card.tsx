@@ -1,3 +1,5 @@
+import { ArrowUp, ArrowDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
 export interface ItemCardProps {
   itemName: string;
   percentageChange: number;
@@ -6,21 +8,23 @@ export interface ItemCardProps {
 
 export default function ItemCard({ itemName, percentageChange, imageUrl }: ItemCardProps) {
   const isPositiveChange = percentageChange >= 0;
-  const changeColor = isPositiveChange ? 'text-blue-500' : 'text-red-500';
-  const sign = isPositiveChange ? '+' : '-';
+  const changeColor = isPositiveChange ? 'text-blue-600' : 'text-red-600';
+  const Sign = isPositiveChange ? (
+    <ArrowUp className={cn(changeColor, 'w-4 h-4')} />
+  ) : (
+    <ArrowDown className={cn(changeColor, 'w-4 h-4')} />
+  );
 
   return (
-    <div
-      className={`bg-gray-100 rounded-lg p-3 flex flex-col items-center w-[120px] h-[170px] justify-start shadow-md`}
-    >
-      <div className="bg-gray-200 rounded-full p-2 w-16 h-16 flex items-center justify-center mb-3">
-        <img src={imageUrl} alt={itemName} width={36} height={36} className="object-contain" />
+    <div className="px-4 py-3 bg-stone-50 rounded-xl inline-flex flex-col justify-center items-center gap-2">
+      <div className="p-1.5 inline-flex justify-start items-center gap-2.5">
+        <img className="w-10 h-10" src={imageUrl} />
       </div>
-      <p className="text-md font-bold text-gray-800 text-center h-10 flex items-center justify-center">{itemName}</p>
-      <p className={`text-base font-semibold ${changeColor} flex items-center`}>
-        {sign}
-        {Math.abs(percentageChange)}%
-      </p>
+      <div className="text-center justify-start text-black text-base font-bold">{itemName}</div>
+      <div className="self-stretch inline-flex justify-center items-center gap-1.5">
+        <div className={cn(changeColor, 'text-center justify-start text-sm font-bold')}>{percentageChange}%</div>
+        <div className="w-4 h-4 relative overflow-hidden">{Sign}</div>
+      </div>
     </div>
   );
 }

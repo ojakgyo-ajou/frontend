@@ -12,7 +12,7 @@ const dummyItems: ItemCardProps[] = [
 
 export default function ItemCarousel() {
   return (
-    <div className="carousel rounded-box w-full py-2 space-x-4 bg-transparent">
+    <div className="carousel w-full space-x-4 bg-transparent">
       {dummyItems.map((item, index) => (
         <div className="carousel-item" key={index}>
           <ItemCard itemName={item.itemName} percentageChange={item.percentageChange} imageUrl={item.imageUrl} />
