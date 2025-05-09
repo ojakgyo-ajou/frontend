@@ -18,7 +18,7 @@ const products = [
   {
     itemCode: '111',
     kindCode: '02',
-    kindName: '햇일반계',
+    kindName: '당근',
     unit: '20kg',
     todayPrice: 55000,
     yesterdayPrice: 54500,
@@ -29,7 +29,7 @@ const products = [
   {
     itemCode: '112',
     kindCode: '01',
-    kindName: '일반계(찹쌀)',
+    kindName: '찹쌀',
     unit: '1kg',
     todayPrice: 4000,
     yesterdayPrice: 4000,
