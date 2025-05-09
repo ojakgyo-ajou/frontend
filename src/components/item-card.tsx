@@ -18,7 +18,7 @@ export default function ItemCard({ itemName, percentageChange, imageUrl }: ItemC
   return (
     <div className="px-4 py-3 bg-stone-50 rounded-xl inline-flex flex-col justify-center items-center gap-2">
       <div className="p-1.5 inline-flex justify-start items-center gap-2.5">
-        <img className="w-10 h-10" src={imageUrl} />
+        <img className="w-10 h-10 object-contain" src={imageUrl} />
       </div>
       <div className="text-center justify-start text-black text-base font-bold">{itemName}</div>
       <div className="self-stretch inline-flex justify-center items-center gap-1.5">
