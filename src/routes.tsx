@@ -5,7 +5,6 @@ import Login from '@/components/pages/Login';
 import Item from '@/components/pages/Item';
 import Setting from '@/components/pages/Setting';
 import NotFound from '@/components/pages/NotFound';
-import TestPage from './components/pages/Test';
 
 export default function AppRoutes() {
   return (
@@ -16,7 +15,6 @@ export default function AppRoutes() {
         <Route path="item/:item" element={<Item />} />
         <Route path="setting" element={<Setting />} />
 
-        <Route path="test" element={<TestPage/>} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

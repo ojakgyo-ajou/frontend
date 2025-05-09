@@ -1,40 +1,16 @@
-import { Outlet, Link, useLocation } from 'react-router';
-import { Home, Search, Sparkles, Utensils, Settings } from 'lucide-react';
+import { Outlet } from 'react-router';
+import MenuBar from '@/components/menu-bar';
 
 export default function Root() {
-  const location = useLocation();
-
   return (
     <>
       <main className="h-screen overflow-y-auto pb-16">
         <Outlet />
       </main>
 
-      <nav className="dock">
-        <Link to="/" className={location.pathname === '/' ? 'dock-active' : ''}>
-          <Home className="size-[1.2em]" />
-          <span className="dock-label">홈</span>
-        </Link>
-        <Link to="/search" className={location.pathname === '/search' ? 'dock-active' : ''}>
-          <Search className="size-[1.2em]" />
-          <span className="dock-label">검색</span>
-        </Link>
-
-        <Link to="/ai" className={location.pathname === '/ai' ? 'dock-active' : ''}>
-          <Sparkles className="size-[1.2em]" />
-          <span className="dock-label">AI 추천</span>
-        </Link>
-
-        <Link to="/menu" className={location.pathname === '/menu' ? 'dock-active' : ''}>
-          <Utensils className="size-[1.2em]" />
-          <span className="dock-label">오늘의 메뉴</span>
-        </Link>
-
-        <Link to="/setting" className={location.pathname === '/setting' ? 'dock-active' : ''}>
-          <Settings className="size-[1.2em]" />
-          <span className="dock-label">설정</span>
-        </Link>
-      </nav>
+      <div className="fixed bottom-0 left-0 right-0 flex justify-center pb-4 z-50">
+        <MenuBar />
+      </div>
     </>
   );
 }
