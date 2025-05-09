@@ -1,50 +1,56 @@
 interface CardItem {
-  tags: string[]; // 해시태그 배열 (예: ["#당근", "#간단"])
-  title: string; // 제목 텍스트
+  tags: string[];
+  title: string;
+  url: string;
 }
 
 type CardData = CardItem[];
 
 const cardList: CardData = [
   {
-    tags: ['#당근', '#바로', '#간단'],
-    title: '당근으로 해먹는 간단한 자취식단',
-  },
-  {
-    tags: ['#브로콜리', '#건강', '#레시피'],
-    title: '브로콜리와 닭가슴살로 만드는 건강한 한끼',
+    tags: ['#당근', '#특별', '#독특'],
+    title: '당근으로 해먹는 특별한 레시피',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#퀴노아', '#영양', '#비건'],
     title: '퀴노아 샐러드로 만드는 영양 만점 비건식',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#두부', '#맛있어', '#간편'],
     title: '두부 스테이크로 간편하게 즐기는 맛있는 저녁',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#감자', '#속풀림', '#혼밥'],
     title: '감자탕으로 속 푸는 혼자만의 따뜻한 저녁',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#계란', '#빠르게', '#아침식사'],
     title: '계란말이로 빠르게 해결하는 아침 한끼',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#김치', '#한그릇', '#집밥'],
     title: '김치볶음밥으로 완성하는 든든한 한그릇',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#연어', '#프로틴', '#다이어트'],
     title: '연어 스테이크로 단백질 가득 다이어트 식단',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#참치', '#샌드위치', '#간편'],
     title: '참치마요 샌드위치로 빠르게 해결하는 점심',
+    url: '/api/images/케이크',
   },
   {
     tags: ['#고구마', '#간식', '#저탄수'],
     title: '에어프라이어 고구마로 건강한 간식 타임',
+    url: '/api/images/케이크',
   },
 ];
 
